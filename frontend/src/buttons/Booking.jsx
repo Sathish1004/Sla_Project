@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -13,20 +11,53 @@ const Booking = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeNeighborhoodTab, setActiveNeighborhoodTab] = useState("shopping");
 
-  // Mock PG data - in real app, fetch based on ID
   const pgData = {
-    id: id,
-    name: "Elite Men's Stay",
-    location: "Velachery, Chennai",
-    price: 8000,
-    rating: 4.5,
-    amenities: ["WiFi", "AC", "Food", "Laundry", "Security", "Parking"],
-    description: "A premium PG accommodation with modern amenities and excellent security features.",
-    images: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800"
-    ]
-  };
+  id: id,
+  name: "Elite Men's Stay",
+  location: "Velachery, Chennai",
+  price: 8000,
+  rating: 4.5,
+
+  // ⭐ Added Room Types
+  roomTypes: [
+    {
+      type: "Single Sharing",
+      price: 12000,
+      image: "https://i.pinimg.com/736x/2b/f2/ed/2bf2edbaa4a4ec1fdc9031b613b7b0b1.jpg",
+    },
+    {
+      type: "Double Sharing",
+      price: 9500,
+      image: "https://i.pinimg.com/736x/9a/d2/24/9ad2249fa0ebf8bb87ed78ac0a7d56a1.jpg",
+    },
+    {
+      type: "Triple Sharing",
+      price: 8000,
+      image: "https://i.pinimg.com/736x/d8/8e/ab/d88eab72694a08c006f24b63a99e36fc.jpg",
+    },
+  ],
+
+  amenities: [
+    "WiFi",
+    "AC",
+    "Food",
+    "Laundry",
+    "Security",
+    "Parking",
+    "Housekeeping",
+    "Power Backup",
+    "Attached Bathroom",
+  ],
+
+  description:
+    "A premium PG accommodation with modern amenities, spacious rooms, and excellent security features. Located in the heart of Velachery with easy access to IT parks and transport.",
+
+  // ⭐ Added More Realistic Room Images
+  images: [
+    "https://i.pinimg.com/1200x/2e/76/b7/2e76b7b352e21747439a3a0d6bec272c.jpg"
+  ]
+};
+
 
   // Neighborhood data
   const neighborhoodData = {
@@ -264,7 +295,7 @@ const Booking = () => {
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 border border-green-200">
                 <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
                   <span className="text-green-500"></span>
-                  Security & Safety Features
+                  Security & Safety Features . 
                 </h3>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="flex items-center gap-2">
@@ -353,10 +384,10 @@ const Booking = () => {
                       <span>Monthly Rent</span>
                       <span>₹{pricePerMonth} × {months}</span>
                     </div>
-                    <div className="flex justify-between text-gray-600">
+                    {/* <div className="flex justify-between text-gray-600">
                       <span>Security Deposit</span>
                       <span>₹{pricePerMonth}</span>
-                    </div>
+                    </div> */}
                     <div className="flex justify-between text-gray-600">
                       <span>Maintenance Charges</span>
                       <span>₹500</span>
@@ -364,7 +395,7 @@ const Booking = () => {
                     <div className="border-t border-gray-200 pt-2 mt-2">
                       <div className="flex justify-between text-lg font-bold text-blue-600">
                         <span>Total Amount</span>
-                        <span>₹{total + pricePerMonth + 500}</span>
+                        <span>₹{total + 500}</span>
                       </div>
                       <p className="text-xs text-gray-500 mt-1">
                         * Security deposit refundable at checkout
@@ -378,7 +409,7 @@ const Booking = () => {
                   onClick={handleConfirmBooking}
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                 >
-                  Confirm Booking - ₹{total + pricePerMonth + 500}
+                  Confirm Booking - ₹ {total  + 500} 
                 </button>
 
                 {/* Additional Info */}
@@ -453,12 +484,12 @@ const Booking = () => {
                   
                   <div className="flex items-center justify-between text-sm text-gray-600">
                     <span className="flex items-center gap-1">
-                      <span className="text-green-500">📍</span>
+                      <span className="text-green-500"></span>
                       Easy Access
                     </span>
                     <span className="flex items-center gap-1">
-                      <span className="text-amber-500">⭐</span>
-                      Highly Rated
+                      <span className="text-amber-500"></span>
+                      Highly Rated *
                     </span>
                   </div>
                 </div>
@@ -494,12 +525,13 @@ const Booking = () => {
                 Our support team is available 24/7 to assist you with any questions about the PG, amenities, neighborhood, or booking process.
               </p>
               <button className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                📞 Contact Support
+                 Contact Support
               </button>
             </div>
           </div>
         </div>
       </div>
+      
     </>
   );
 };

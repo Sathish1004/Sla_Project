@@ -179,58 +179,47 @@ const GirlsPGPage = () => {
                   </div>
 
                   {/* Price */}
-                  <div className="mb-4">
-                    <p className="text-2xl font-bold text-pink-600">₹{pg.price}/month</p>
-                    <p className="text-xs text-gray-500">Inclusive of all charges</p>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-2">
-                    <button 
-                      onClick={() => handleBookReview(pg.name, pg.id)}
-                      className="flex-1 min-w-[120px] bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-sm font-semibold py-2.5 px-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-1"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /> */}
-                      </svg>
-                       Give feedback
-                    </button>
-
-                  <button 
-  onClick={() => handleBuyReview(pg.name, pg.id)}
-  className="flex-1 min-w-[120px] bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-sm font-semibold py-2.5 px-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex flex-col items-center justify-center gap-1"
->
-  <div className="flex items-center gap-1">
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
-    Read Review
-  </div>
-
-  {/* Small text below */}
-  <span className="text-[10px] font-normal opacity-90 leading-none">
-    (already booked users)
-  </span>
-</button>
-
-
-                    <button 
-                      onClick={() => handleViewPG(pg.id)}
-                      className="flex-1 min-w-[120px] border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white text-sm font-semibold py-2.5 px-3 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-1"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      View PG
-                    </button>
-
-                    <button 
+                  <div className="grid grid-cols-2 gap-4 mt-6">
+                    {/* Book Room */}
+                    <button
                       onClick={() => handleBooking(pg.id)}
-                      className="flex-1 min-w-[120px] bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white text-sm font-semibold py-2.5 px-3 rounded-lg shadow-lg hover:shadow-purple-500/25 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-1"
+                      className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /> */}
-                      </svg>
-                      Booking
+                      Book Room
+                    </button>
+
+                    {/* View Images */}
+                    <button
+                      onClick={() => handleViewPG(pg.id)}
+                      className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+                    >
+                      View Images
+                    </button>
+
+                    {/* Write Review */}
+                    <button
+                      onClick={() => handleBookReview(pg.id)}
+                      className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+                    >
+                      Write Review
+                      <span className="block text-xs opacity-90 mt-1">
+                        (give rating & feedback)
+                      </span>
+                    </button>
+
+                    {/* Read Reviews */}
+                    <button
+                      onClick={() => handleBuyReview(pg.id)}
+                      className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+                    >
+                      Read Reviews
+                      <span className="block text-xs opacity-90 mt-1">
+                        (already booked users)
+                      </span>
                     </button>
                   </div>
                 </div>

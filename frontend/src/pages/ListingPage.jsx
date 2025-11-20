@@ -95,9 +95,12 @@ const ListingsPage = () => {
       >
         {/* Premium Badge */}
         <div className="absolute top-4 left-4 z-20">
-          <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-            Premium
+          <span className="bg-violet-400 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+            Comfort
           </span>
+          
+          
+          
         </div>
 
         {/* Image Slider */}
@@ -193,51 +196,12 @@ const ListingsPage = () => {
       </div>
     );
   };
-
-  // Stats data
-  const stats = [
-    { number: "500+", label: "Happy Residents" },
-    { number: "50+", label: "PG Locations" },
-    { number: "24/7", label: "Support" },
-    { number: "4.8★", label: "Average Rating" }
-  ];
-
   return (
     <>
       <Navbar />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20">
         {/* Hero Section */}
-        <div className="relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-            <div className="relative z-10">
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Find Your Perfect
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  PG in Chennai
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Discover comfortable, safe, and affordable paying guest accommodations 
-                tailored to your lifestyle. Your ideal home away from home awaits.
-              </p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-12">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Background Elements */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
+        
 
         {/* PG Selection Section */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

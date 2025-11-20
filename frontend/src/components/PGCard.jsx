@@ -101,45 +101,55 @@ const PGCard = ({ title, price, location, gender, img, amenities, id }) => {
         </div>
 
         {/* ---- 4 BUTTONS (2 ROWS × 2 COLUMNS) ---- */}
-        <div className="grid grid-cols-2 gap-3">
-          {/* Book Room */}
-          <button
-            onClick={handleBookRoom}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition"
-          >
-            Book Room
-          </button>
+        {/* ---- 4 BUTTONS (2×2 GRID) ---- */}
+<div className="grid grid-cols-2 gap-4 mt-10">
 
-          {/* View Images */}
-          <button
-            onClick={handleViewImages}
-            className="bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-xl font-semibold transition"
-          >
-            View Images
-          </button>
+  {/* Book Room */}
+  <button
+    onClick={handleBookRoom}
+    className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+ 
+  >
+    Book Room
+  </button>
 
-          {/* Write Review */}
-          <button
-            onClick={handleBookReview}
-            className="bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition"
-          >
-            Give Feedback
-            <span className="block text-xs font-normal mt-1 opacity-90">
-              (give rating & feedback)
-            </span>
-          </button>
+  {/* View Images */}
+  <button
+    onClick={handleViewImages}
+   className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+   >
+    View Images
+  </button>
 
-          {/* View Reviews */}
-          <button
-            onClick={handleViewReview}
-            className="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition"
-          >
-            Read Reviews
-            <span className="block text-xs font-normal mt-1 opacity-90">
-              (already booked users)
-            </span>
-          </button>
-        </div>
+  {/* Write Review */}
+  <button
+    onClick={handleBookReview}
+   className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+ 
+  >
+    Write Review
+    <span className="block text-xs font-normal mt-1 opacity-90">
+      (give rating & feedback)
+    </span>
+  </button>
+
+  {/* Read Reviews */}
+  <button
+    onClick={handleViewReview}
+    className="bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 
+               text-white py-4 rounded-2xl font-semibold shadow-md shadow-black/20 transition"
+  >
+    Read Reviews
+    <span className="block text-xs font-normal mt-1 opacity-90">
+      (already booked users)
+    </span>
+  </button>
+
+</div>
+
       </div>
 
       {/* Featured Badge */}
@@ -153,3 +163,6 @@ const PGCard = ({ title, price, location, gender, img, amenities, id }) => {
 };
 
 export default PGCard;
+
+
+
