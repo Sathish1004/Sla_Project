@@ -851,7 +851,7 @@ const HomePage = () => {
 
   // ⭐ ENHANCED CARD WITH NEIGHBORHOOD DETAILS
   const PGCard = ({ pg }) => {
-    const { title, location, images, gender, color, rating, reviews, amenities, nearby, highlights } = pg;
+    const { title, location, images, gender, color, rating, amenities, nearby, highlights } = pg;
     const [index, setIndex] = useState(0);
     const [showNeighborhood, setShowNeighborhood] = useState(false);
 
@@ -902,7 +902,7 @@ const HomePage = () => {
           <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1 shadow-lg">
             <span className="text-yellow-500"></span>
             <span className="font-bold text-gray-800">{rating}</span>
-            <span className="text-gray-500 text-sm">({reviews})</span>
+          
           </div>
 
           {/* Quick View Overlay */}
@@ -937,7 +937,7 @@ const HomePage = () => {
 
           {/* Amenities */}
           <div className="mb-6">
-            <h4 className="font-semibold text-gray-700 mb-2">Key Amenities:</h4>
+            <h4 className="font-semibold text-gray-700 mb-2">  <b className=""> Key Amenities</b> </h4>
             <div className="flex flex-wrap gap-2">
               {amenities.map((amenity, i) => (
                 <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-lg">
@@ -953,7 +953,7 @@ const HomePage = () => {
               onClick={() => setShowNeighborhood(!showNeighborhood)}
               className="flex items-center justify-between w-full text-left mb-2"
             >
-              <span className="font-semibold text-gray-700">📍 Nearby Places</span>
+              <span className="font-semibold text-gray-700"> <b className="text-green-500">E</b>xplore - Nearby Places</span>
               <svg 
                 className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${showNeighborhood ? 'rotate-180' : ''}`}
                 fill="none" 
@@ -973,7 +973,7 @@ const HomePage = () => {
                     <span className="text-red-600 text-xs">🏥</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-700">Hospitals</p>
+                    <p className="text-sm font-medium text-gray-700">  <b className="text-green-600">H</b>ospitals</p>
                     <p className="text-xs text-gray-600">{nearby.hospitals.join(', ')}</p>
                   </div>
                 </div>
@@ -984,7 +984,7 @@ const HomePage = () => {
                     <span className="text-green-600 text-xs">🏛️</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-700">Tourist Places</p>
+                    <p className="text-sm font-medium text-gray-700">  <b className="text-green-600">T</b>ourist Places</p>
                     <p className="text-xs text-gray-600">{nearby.touristPlaces.join(', ')}</p>
                   </div>
                 </div>
@@ -995,7 +995,7 @@ const HomePage = () => {
                     <span className="text-blue-600 text-xs">🏢</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-700">IT Parks & Offices</p>
+                    <p className="text-sm font-medium text-gray-700"> <b className="text-green-700">IT</b>Parks & Offices</p>
                     <p className="text-xs text-gray-600">{nearby.offices.join(', ')}</p>
                   </div>
                 </div>
@@ -1127,7 +1127,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 };

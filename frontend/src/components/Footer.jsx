@@ -41,10 +41,10 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4 text-white">Get in Touch</h4>
             <div className="space-y-3 text-gray-300 text-sm">
               <p className="flex items-center gap-2">
-                <span>📧</span> support@chennaipgfinder.com
+                <span>📧</span> sathishj0423@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <span>📱</span> +91 98765 43210
+                <span>📱</span> +91 98765 43210z
               </p>
             </div>
           </div>
